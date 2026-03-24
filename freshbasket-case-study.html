@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreshBasket — Inventory Redesign · UX Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=DM+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 01 · HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <span class="hero-tag">UX Case Study &nbsp;·&nbsp; 2025</span>
+    <h1 class="hero-title">Fresh<em>Basket</em><br>Inventory<br>Redesign</h1>
+    <p class="hero-subtitle">Shop owners and warehouse supervisors were managing a ₹10M+ inventory with paper logs — because the software they had was slower than a notepad.</p>
+    <div class="hero-meta">
+      <div><span class="hero-meta-label">Role</span><span class="hero-meta-value">UX Designer</span></div>
+      <div><span class="hero-meta-label">Type</span><span class="hero-meta-value">End-to-end Redesign</span></div>
+      <div><span class="hero-meta-label">Year</span><span class="hero-meta-value">2025</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="assets/failure-glare.png" alt="Staff member squinting at a monitor under harsh overhead fluorescent lighting in a grocery store">
+    <span class="hero-screen-label">Patel&#8217;s store, Mumbai &nbsp;·&nbsp; Field research &nbsp;·&nbsp; 2025</span>
+  </div>
+</section>
+
+
+<!-- PROCESS MAP: Visual orientation for scanners -->
+<div class="process-map-section">
+  <div class="process-map-inner">
+    <span class="process-map-label">End-to-end UX process</span>
+    <svg class="process-map-svg" viewBox="0 0 1064 120" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="pm-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#0F9B8E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+
+      <!-- Phase 1: Field Research -->
+      <rect x="0" y="10" width="176" height="76" rx="6" fill="#1C2F45" stroke="#0F9B8E" stroke-width="1"/>
+      <text font-family="DM Mono, monospace" font-size="10" fill="#0F9B8E" letter-spacing="1" x="88" y="30" text-anchor="middle">01 — DISCOVER</text>
+      <text font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#F0EDE8" x="88" y="54" text-anchor="middle">Field Research</text>
+      <text font-family="DM Sans, sans-serif" font-size="11" fill="#7A93A8" x="88" y="72" text-anchor="middle">3 sites · 2 roles · field visits</text>
+
+      <!-- Arrow -->
+      <line x1="176" y1="48" x2="210" y2="48" stroke="#0F9B8E" stroke-width="1" marker-end="url(#pm-arrow)"/>
+
+      <!-- Phase 2: Interviews -->
+      <rect x="210" y="10" width="176" height="76" rx="6" fill="#1C2F45" stroke="#0F9B8E" stroke-width="1"/>
+      <text font-family="DM Mono, monospace" font-size="10" fill="#0F9B8E" letter-spacing="1" x="298" y="30" text-anchor="middle">02 — LISTEN</text>
+      <text font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#F0EDE8" x="298" y="54" text-anchor="middle">User Interviews</text>
+      <text font-family="DM Sans, sans-serif" font-size="11" fill="#7A93A8" x="298" y="72" text-anchor="middle">2 roles · filmed sessions</text>
+
+      <!-- Arrow -->
+      <line x1="386" y1="48" x2="420" y2="48" stroke="#0F9B8E" stroke-width="1" marker-end="url(#pm-arrow)"/>
+
+      <!-- Phase 3: Insight (highlighted) -->
+      <rect x="420" y="0" width="176" height="96" rx="6" fill="#0A6B62" stroke="#0F9B8E" stroke-width="1.5"/>
+      <text font-family="DM Mono, monospace" font-size="10" fill="#8cd8cf" letter-spacing="1" x="508" y="22" text-anchor="middle">03 — REFRAME</text>
+      <text font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#fff" x="508" y="48" text-anchor="middle">Core Insight</text>
+      <text font-family="DM Sans, sans-serif" font-size="11" fill="#8cd8cf" x="508" y="66" text-anchor="middle">Operators ≠ administrators</text>
+      <text font-family="DM Sans, sans-serif" font-size="11" fill="#8cd8cf" x="508" y="82" text-anchor="middle">Prediction &gt; reporting</text>
+
+      <!-- Arrow -->
+      <line x1="596" y1="48" x2="630" y2="48" stroke="#0F9B8E" stroke-width="1" marker-end="url(#pm-arrow)"/>
+
+      <!-- Phase 4: Design + Test -->
+      <rect x="630" y="10" width="176" height="76" rx="6" fill="#1C2F45" stroke="#0F9B8E" stroke-width="1"/>
+      <text font-family="DM Mono, monospace" font-size="10" fill="#0F9B8E" letter-spacing="1" x="718" y="30" text-anchor="middle">04 — DESIGN</text>
+      <text font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#F0EDE8" x="718" y="54" text-anchor="middle">Design &amp; Test</text>
+      <text font-family="DM Sans, sans-serif" font-size="11" fill="#7A93A8" x="718" y="72" text-anchor="middle">2 dashboards · usability tested</text>
+
+      <!-- Arrow -->
+      <line x1="806" y1="48" x2="840" y2="48" stroke="#0F9B8E" stroke-width="1" marker-end="url(#pm-arrow)"/>
+
+      <!-- Phase 5: Outcomes -->
+      <rect x="840" y="10" width="224" height="76" rx="6" fill="#1C2F45" stroke="#E8A427" stroke-width="1"/>
+      <text font-family="DM Mono, monospace" font-size="10" fill="#E8A427" letter-spacing="1" x="952" y="30" text-anchor="middle">05 — SHIPPED</text>
+      <text font-family="DM Sans, sans-serif" font-size="15" font-weight="500" fill="#F0EDE8" x="952" y="54" text-anchor="middle">Outcomes</text>
+      <text font-family="DM Sans, sans-serif" font-size="11" fill="#7A93A8" x="952" y="72" text-anchor="middle">100% adoption · 0 training sessions</text>
+    </svg>
+  </div>
+</div>
+
+<!-- 02 · THE PROBLEM -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">02 — The Problem</span>
+      <h2>A startup was quietly<br>bleeding money.</h2>
+    </div>
+    <div class="section-intro">
+      <p class="reveal">Fixoria, a growing retail startup, was losing revenue not because of poor products or weak demand — but because the two people most responsible for keeping stock healthy were operating completely blind. Stock-outs nobody saw coming. Overstock sitting undetected. Deliveries arriving without anyone knowing the timing. Every critical number was buried behind navigation menus — click, memorise, navigate, forget, repeat — during the busiest hours of the working day.</p>
+    </div>
+    <div class="problem-grid reveal">
+      <div class="problem-card">
+        <span class="problem-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h12"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg></span>
+        <h3>The business problem</h3>
+        <p>Revenue lost to stock-outs and overstock — both caused by a system that made inventory status invisible without deliberate navigation effort.</p>
+      </div>
+      <div class="problem-card">
+        <span class="problem-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+        <h3>The human problem</h3>
+        <p>Two distinct roles with urgent, different information needs — shop owner and warehouse supervisor — being failed simultaneously by one interface designed for neither.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · THE OLD DASHBOARD -->
+<section class="section" style="background:#E1F5EE;">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--teal-dim);">03 — THE OLD DASHBOARD</span>
+      <h2 style="color:var(--navy); font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 24px;">This dashboard was designed<br>for the CEO. Not the shop floor.</h2>
+    </div>
+    <div class="section-intro" style="margin-bottom: 64px;">
+      <p class="reveal" style="color:var(--text-on-teal-pale); font-size: 1.1rem;">When I sat down and tried to use the Fixoria dashboard the way Suresh and Ramesh would use it — standing at a counter, customers waiting — I realised something immediately. This system was not built for them. It was built for someone reviewing the business at the end of the day.</p>
+    </div>
+
+    <!-- Before/After Images -->
+    <div class="before-after reveal" style="margin-top: 56px;">
+      <div class="ba-item">
+        <span class="ba-label before">BEFORE — FIXORIA</span>
+        <img src="assets/old-dashboard.png" alt="Old Fixoria dashboard">
+      </div>
+      <div class="ba-item after">
+        <span class="ba-label after" style="background:var(--teal);">AFTER — FRESHBASKET</span>
+        <img src="assets/dashboard-store.png" alt="FreshBasket redesign">
+      </div>
+    </div>
+
+    <!-- 2x2 Annotations Grid -->
+    <div class="annotations reveal" style="margin-top: 64px;">
+      <div class="annotation removal">
+        <h4>The navigation told the wrong story</h4>
+        <p>The left sidebar listed Finance, Marketing, Analytics Report, Customers, Discount, Online Store — twelve items in total. This was a menu designed for the CEO, Himmad, whose name sits at the bottom. Suresh is not the CEO. He is a shop owner at the counter during a busy shift.</p>
+        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: the store owner navigation has only 5 task-focused items. Only what each role actually uses.</p>
+      </div>
+      <div class="annotation removal">
+        <h4>186 out-of-stock items had no urgency</h4>
+        <p>The stock bar at the top showed "Out of stock: 186" and "Low stock: 355" — the right information, but rendered as a small coloured bar above a 45-row product table. Your eye went to the table. The critical numbers sat quietly above it, easy to miss entirely.</p>
+        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: Low Stock Items (2) and Stock Health (92%) are large stat cards — the first things you see.</p>
+      </div>
+      <div class="annotation removal">
+        <h4>All products looked equally important</h4>
+        <p>In the product table, items appeared as identical rows. There was no visual weight, no sorting by urgency, nothing that said "this one needs your attention right now." You had to read every row to understand the situation.</p>
+        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: the Time Left to Restock panel surfaces only the critical items — with the action right there.</p>
+      </div>
+      <div class="annotation removal">
+        <h4>Stock and orders were completely disconnected</h4>
+        <p>If Suresh wanted to know "is what I'm running out of actually on its way?" — he had to open Inventory, note the problem, then navigate to Orders, find the relevant order, and check its status. No connection between them.</p>
+        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: Orders In Transit and the Recent Orders table both live on the home screen. Full context in one view.</p>
+      </div>
+      <div class="annotation removal">
+        <h4>The system showed the present. It never warned about the future.</h4>
+        <p>For Ramesh, perishable items like milk have expiry windows measured in hours. The old dashboard showed current stock counts — a product with 2 days left looked identical to a product with 200 days left. Both were just rows in a table.</p>
+        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: the Predictive Alerts panel shows exact remaining shelf life — actionable and region-specific.</p>
+      </div>
+      <div class="annotation removal">
+        <h4>The table was the entire product. There was nothing else.</h4>
+        <p>Open the Fixoria inventory section and you get one thing: a paginated table of 45 products. This is not a dashboard. It is a data viewer. It shows everything equally, which means it effectively shows you nothing useful at speed.</p>
+        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: the Home screen is for decisions, not browsing. The table is one click away when needed.</p>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="comparison-table-wrap reveal">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>FEATURE</th>
+            <th class="before">FIXORIA &mdash; BEFORE</th>
+            <th class="after">FRESHBASKET &mdash; AFTER</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Navigation items</td>
+            <td class="before">12+ items — Finance, Marketing, Analytics, Customers, Discount...</td>
+            <td class="after">5 items (store) · 4 items (warehouse) — task-focused only</td>
+          </tr>
+          <tr>
+            <td>Home screen primary view</td>
+            <td class="before">45-product table, paginated across 12 pages</td>
+            <td class="after">4 stat cards + role-specific operational content</td>
+          </tr>
+          <tr>
+            <td>Stock health visibility</td>
+            <td class="before">Small coloured bar above the table — easy to miss</td>
+            <td class="after">Large "Stock Health 92%" stat card — first thing visible</td>
+          </tr>
+          <tr>
+            <td>Urgency signalling</td>
+            <td class="before">All products equal — no priority ranking</td>
+            <td class="after">High / Medium / Low labels + Time Left to Restock panel</td>
+          </tr>
+          <tr>
+            <td>Perishable alerts</td>
+            <td class="before">None — had to manually filter and check each item</td>
+            <td class="after">Predictive Alerts with exact countdown — "1 Day Left"</td>
+          </tr>
+          <tr>
+            <td>Stock + orders in one view</td>
+            <td class="before">Two separate sections — no connection visible</td>
+            <td class="after">Both visible on the same home screen</td>
+          </tr>
+          <tr>
+            <td>Logged in as</td>
+            <td class="before">Himmad, CEO — not the operator</td>
+            <td class="after">Suresh P., Shop Owner · Ramesh K., Warehouse Supervisor</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · THE TWO USERS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">04 — The Users</span>
+      <h2>Two roles. Two sets of<br>urgent information needs.</h2>
+      <p class="section-intro" style="color:var(--text-secondary);">These are not invented personas. These are the roles I met in the field and observed at work.</p>
+    </div>
+    <div class="users-grid">
+      <div class="user-card reveal">
+        <div class="user-card-header shop">
+          <span class="user-role-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          <div class="user-role shop">Shop Owner</div>
+          <h3>Suresh P. &nbsp;·&nbsp; Thane West Outlet</h3>
+          <p>Monitors sales, tracks incoming orders, and manages stock health for a single store during peak and off-peak hours.</p>
+        </div>
+        <ul class="user-pains shop">
+          <li>No upfront view of which products are critically low — required navigating into inventory and checking each item individually.</li>
+          <li>Discovering stock-outs only after a customer asked for an item that wasn't on the shelf.</li>
+          <li>Incoming order information buried in sub-menus — couldn't tell what was arriving or when without clicking through multiple screens.</li>
+          <li>No single number representing overall store health — had to assemble the picture mentally from scattered data.</li>
+        </ul>
+      </div>
+      <div class="user-card reveal">
+        <div class="user-card-header warehouse">
+          <span class="user-role-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/><path d="M2 12h20"/></svg></span>
+          <div class="user-role warehouse">Warehouse Supervisor</div>
+          <h3>Ramesh K. &nbsp;·&nbsp; Regional Logistics, Mumbai North</h3>
+          <p>Manages physical stock across multiple outlets, monitors perishables, tracks deliveries, and coordinates logistics across the region.</p>
+        </div>
+        <ul class="user-pains warehouse">
+          <li>No visibility of perishable stock approaching expiry — milk, curd, and bread required manual checks rather than surfaced alerts.</li>
+          <li>Delivery status hidden — required separate navigation to find where trucks were and when they would arrive.</li>
+          <li>Incoming vs. available stock impossible to see simultaneously, making warehouse planning during busy periods genuinely difficult.</li>
+          <li>Urgent outlet orders had no priority system — every request looked equally important regardless of actual urgency.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · FIELD RESEARCH -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">05 — Field Research</span>
+      <h2>I went to where<br>the work actually happened.</h2>
+      <p class="section-intro" style="color:var(--text-on-dark-muted);">I visited shops and warehouses during peak hours — mornings when deliveries arrived, afternoons when orders spiked. I observed owners and supervisors as they worked. I noted where they paused, where they made mistakes, and what they did when the system frustrated them.</p>
+    </div>
+  </div>
+  <div class="photo-grid reveal">
+    <div class="photo-item">
+      <img src="assets/field-research.jpeg" alt="Researcher conducting field observation at store checkout area">
+      <div class="photo-caption">
+        <strong>Environmental finding — lighting glare</strong>
+        Overhead fluorescent tubes created visible screen glare at every checkout counter visited. Nobody had flagged this internally. It only became apparent when standing in the actual environment — and it directly shaped the decision to build a Light/Dark toggle into the initial design.
+      </div>
+    </div>
+    <div class="photo-item">
+      <img src="assets/failure-glare.png" alt="Staff member at checkout counter — overhead fluorescent lighting creates visible screen glare">
+      <div class="photo-caption">
+        <strong>Field visit · Patel's store, Mumbai</strong>
+        Researcher on-site during a morning shift observation — documenting how staff split attention between serving customers and navigating the legacy system to check stock.
+      </div>
+    </div>
+    <div class="photo-item">
+      <img src="assets/research-shelf.jpg" alt="Store shelves with handwritten price tags and expiry labels">
+      <div class="photo-caption">
+        <strong>Physical inventory context</strong>
+        Shelf-level management still relied on handwritten labels — a parallel system that worked in isolation but created reconciliation problems with the digital tool.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="findings-visual reveal">
+      <div class="finding-card">
+        <div class="finding-card-top">
+          <span class="finding-number">Finding 01</span>
+        </div>
+        <div class="finding-title" style="margin-bottom:10px;">App abandoned entirely</div>
+        <p class="finding-desc">Paper logs sat beside every till and every warehouse dispatch point. Workers had stopped using the digital system — not because it broke, but because it was slower than a notepad.</p>
+        <div class="finding-arrow"><div class="finding-arrow-line"></div><span class="finding-arrow-head">&#8594;</span></div>
+        <div class="finding-decision">Redesign must rebuild trust, not just usability</div>
+      </div>
+      <div class="finding-card">
+        <div class="finding-card-top">
+          <span class="finding-number">Finding 02</span>
+        </div>
+        <div class="finding-title" style="margin-bottom:10px;">Fluorescent lighting glare</div>
+        <p class="finding-desc">Overhead fluorescent tubes created visible screen glare at every checkout counter visited. Nobody had flagged this internally — it only became apparent on site.</p>
+        <div class="finding-arrow"><div class="finding-arrow-line"></div><span class="finding-arrow-head">&#8594;</span></div>
+        <div class="finding-decision">Light/Dark toggle built into initial design, day one</div>
+      </div>
+      <div class="finding-card">
+        <div class="finding-card-top">
+          <span class="finding-number">Finding 03</span>
+        </div>
+        <div class="finding-title" style="margin-bottom:10px;">Parallel shelf tracking system</div>
+        <p class="finding-desc">Every shelf had its own handwritten layer — price tags, expiry dates, reorder dates, quantity notes, all written by hand and clipped to the shelving. Staff built this parallel system because the app did not track what they needed at shelf level.</p>
+        <div class="finding-arrow"><div class="finding-arrow-line"></div><span class="finding-arrow-head">&#8594;</span></div>
+        <div class="finding-decision">Digital system must surface shelf-level urgency — expiry and restock timing — not just warehouse stock counts</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="paper-log-callout reveal">
+      <div class="callout-icon">📋</div>
+      <div>
+        <div class="callout-label">Key finding — The Paper Log Problem</div>
+        <p class="callout-text">Workers had stopped using the digital system entirely. Paper logs sat beside every till and dispatch point. <strong style="color:var(--off-white);">The app had been defeated by a notepad.</strong> The redesign would need to earn that trust back.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- 05 · USER INTERVIEWS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">06 — User Interviews</span>
+      <h2>Hear it from the<br>people who lived it.</h2>
+      <p class="section-intro" style="color:var(--text-secondary);">I interviewed both user types separately, in their own environments. These clips capture the specific frustrations that shaped every design decision that followed — not general opinions, but precise moments of friction.</p>
+    </div>
+    <div class="interviews-grid">
+      <div class="interview-card reveal">
+        <p class="interview-quote">"I need to know what's running low before the morning delivery. But by the time I find that in the system, the delivery is already here."</p>
+        <video class="interview-video" controls preload="metadata">
+          <source src="assets/lakshmi-grocery-interview.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+        <div class="interview-source">Shop Owner interview &nbsp;·&nbsp; <span>Lakshmi Grocery</span></div>
+        <p class="interview-context"><strong style="color:var(--teal);font-weight:500;">What I was looking for:</strong> Whether users navigated proactively or waited to be notified. <strong style="color:var(--text);font-weight:500;">What surprised me:</strong> She wasn't describing a slow system — she was describing a system that made her late. Information arrived after the moment to act had already passed.</p>
+      </div>
+      <div class="interview-card reveal">
+        <p class="interview-quote">"The perishables — milk, curd, bread — I need to know today which ones will run out. The app doesn't tell me that. So I keep a separate list."</p>
+        <video class="interview-video" controls preload="metadata">
+          <source src="assets/wellness.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+        <div class="interview-source">Warehouse Supervisor interview &nbsp;·&nbsp; <span>Wellness &amp; Grocery Hub</span></div>
+        <p class="interview-context"><strong style="color:var(--teal);font-weight:500;">What I was looking for:</strong> Whether supervisors relied on the system or had workarounds. <strong style="color:var(--text);font-weight:500;">What surprised me:</strong> He had built a parallel manual system not because the app was broken — but because it didn't surface the right information. That distinction shaped the entire predictive panel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · THE CORE INSIGHT -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="reveal"><span class="section-label">07 — The Core Insight</span></div>
+    <div class="insight-statement reveal">
+      <span class="insight-line1">The system was built for</span>
+      <span class="insight-line2">administrators.</span>
+      <span class="insight-line3">The users were operators.</span>
+    </div>
+    <div class="workflow-compare reveal">
+      <div>
+        <div class="workflow-label before">Before &mdash; How it worked</div>
+        <div class="workflow-step before">Navigate to section</div>
+        <div class="workflow-step before">Read stat</div>
+        <div class="workflow-step before">Hold in memory</div>
+        <div class="workflow-step before">Navigate elsewhere</div>
+        <div class="workflow-step before last">Forget &rarr; Repeat</div>
+      </div>
+      <div class="workflow-vs">vs</div>
+      <div>
+        <div class="workflow-label after">After &mdash; How it should work</div>
+        <div class="workflow-step after">Open dashboard</div>
+        <div class="workflow-step after">See all critical data</div>
+        <div class="workflow-step after">Act immediately</div>
+      </div>
+    </div>
+
+    <div class="practice-label reveal">This is what that difference looks like in practice.</div>
+
+    <div class="insight-practice-grid">
+      <div class="practice-card reveal">
+        <img src="assets/old-dashboard.png" alt="Old Fixoria dashboard">
+        <div class="practice-card-content">
+          <div class="practice-tags">
+            <span class="practice-tag before">Before &mdash; Fixoria</span>
+            <span class="practice-tag secondary">Designed for browsing</span>
+          </div>
+          <h4>Old Fixoria dashboard &mdash; 45-product table as primary view</h4>
+          <p>A 45-product table. No summary. No urgency. Every critical number requires deliberate navigation to find. The user has to assemble the picture themselves.</p>
+        </div>
+      </div>
+      <div class="practice-card reveal">
+        <img src="assets/dashboard-store.png" alt="New FreshBasket dashboard">
+        <div class="practice-card-content">
+          <div class="practice-tags">
+            <span class="practice-tag after">After &mdash; FreshBasket</span>
+            <span class="practice-tag secondary">Designed for deciding</span>
+          </div>
+          <h4>New FreshBasket store dashboard &mdash; four stat cards visible immediately</h4>
+          <p>Four stat cards visible the moment the app opens. Low stock, orders, health, predictions &mdash; all upfront. The operator sees the full picture without a single click.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="insight-principle reveal">Design principle: <em>Move from passive reporting to active prediction.</em> The dashboard should warn about what is about to happen &mdash; not just record what has.</p>
+  </div>
+</section>
+
+<!-- 08 · DESIGN THINKING PROCESS -->
+<section class="section section--warm" style="background:#F6F4EF;">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:80px;">
+      <span class="section-label" style="color:var(--teal-dim);">08 &mdash; Design Thinking Process</span>
+      <h2 style="color:var(--navy); margin-bottom: 24px;">How I went from "the app<br>is broken" to the solution.</h2>
+      <p class="section-intro" style="color:var(--text-secondary); max-width: 600px; margin-left: 0; text-align: left;">After the field visits I had a clear picture of what was wrong. What I did not have yet was the answer. Here is how I worked through it &mdash; step by step.</p>
+    </div>
+
+    <div class="strategy-steps">
+      <div class="strategy-item reveal">
+        <div class="strategy-number">1</div>
+        <div class="strategy-content">
+          <h3>I stopped thinking about screens and started thinking about questions.</h3>
+          <p>The mistake the old dashboard made was organising information around what the system knew, rather than what the user needed to know. So I flipped the question. Instead of "how should I arrange this data?" I asked: what is the very first question Suresh has when he opens the app?</p>
+          <p>For Suresh at the store: <em>Do I have anything running critically low right now?</em> That is it. Everything else comes after. For Ramesh at the warehouse: <em>How is today going &mdash; are orders moving, is anything going wrong?</em> He needs a read on regional operations first, then goes deeper.</p>
+          <div class="strategy-box">
+            <strong>The output</strong>
+            <p>Two lists &mdash; one per user &mdash; of the three questions each person has in their first ten seconds in the app. Those lists became the brief for the home screen. If the app could answer those questions without a single click, it would already be dramatically better than what existed.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-item reveal">
+        <div class="strategy-number">2</div>
+        <div class="strategy-content">
+          <h3>I looked at how other operational dashboards handled the same problem.</h3>
+          <p>I looked at dashboards outside of inventory &mdash; logistics tracking tools, order management systems &mdash; specifically looking for examples where someone needed to make fast decisions under time pressure. The pattern I kept seeing in the good ones: a summary layer at the top showing system health at a glance, with details available one level below.</p>
+          <p>The old Fixoria dashboard actually had the right instinct &mdash; the stock health bar existed. It just was not given enough priority. It sat above a 45-product table, so the table dominated the attention. I needed to take that instinct and make it the entire architecture of the home screen.</p>
+          <div class="strategy-box">
+            <strong>The key observation</strong>
+            <p>Good operational dashboards start at "system health" before going to "detail." Fixoria started at detail and buried the health summary. Everything needed to flip.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-item reveal">
+        <div class="strategy-number">3</div>
+        <div class="strategy-content">
+          <h3>I listed what could be removed &mdash; not just what to add.</h3>
+          <p>The old dashboard had Finance, Marketing, Analytics, Report, Discount, and Customers all in the primary navigation. For Suresh's job, none of these are needed at the counter. For Ramesh's job, none of them are relevant during a warehouse shift.</p>
+          <p>I made a deliberate decision: the redesigned home screen would contain only what each user needed to act right now. Everything else would remain accessible &mdash; one click away &mdash; but it would not compete for attention on the primary screen. The store owner went from 12+ navigation items to 4; the warehouse supervisor to 4.</p>
+          <div class="strategy-box">
+            <strong>The principle</strong>
+            <p>Knowing what to take away was as important as knowing what to add. The biggest single improvement in the redesign came not from adding the predictive panel &mdash; but from moving the 45-product table out of the primary view entirely.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-item reveal">
+        <div class="strategy-number">4</div>
+        <div class="strategy-content">
+          <h3>I realized the problem was not just missing data &mdash; it was missing prediction.</h3>
+          <p>When I was working out how to show stock levels for the shop owner, my first instinct was to show current stock counts &mdash; you have 12 units of Toned Milk. That is what the old system was already doing, just buried in a table.</p>
+          <p>Then I thought: what does Suresh actually need to know? He does not need to know he has 12 units. He needs to know whether 12 units is enough to last through the day. The app knows the sales velocity. It knows the current stock level. It can do that calculation.</p>
+          <div class="strategy-box">
+            <strong>The shift</strong>
+            <p>Instead of "12 units remaining" &mdash; show "Empty in 4h 20m &middot; Avg Sales: 1.2/hr". That is a completely different piece of information. The first tells you where you are. The second tells you how long you have. This became the design principle for the entire project: wherever possible, turn a status into a prediction.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-item reveal">
+        <div class="strategy-number">5</div>
+        <div class="strategy-content">
+          <h3>I wireframed in Figma, starting with the four stat cards &mdash; one role at a time.</h3>
+          <p>I did not start by wireframing the full dashboard. I wireframed the four summary cards first &mdash; and I started with the store owner because that was the simpler job to solve: Low Stock Items, Orders in Transit, Stock Health %, Today's Orders. Four numbers, large, visible, no interaction required.</p>
+          <p>I tested the layout with one simple question: if Suresh opens this app and has 10 seconds before a customer needs attention, can he see everything important? If yes, the layout works. If anything important requires a click, it needs to move up.</p>
+          <div class="strategy-box">
+            <strong>Important</strong>
+            <p>Both dashboards use four stat cards at the top &mdash; same pattern, same position &mdash; but the content of those cards is completely different, because the first questions are completely different. The store owner's cards answer "What is the state of my store?" The warehouse supervisor's cards answer "How is regional operations performing?" The shared architecture, role-specific content.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="strategy-item reveal">
+        <div class="strategy-number">6</div>
+        <div class="strategy-content">
+          <h3>I designed two dashboards, not one &mdash; because the jobs were too different for one layout to serve both.</h3>
+          <p>The old system tried to serve both the shop owner and the warehouse supervisor with the same interface. That was the root of the problem. Their jobs were different enough that one layout could not serve both well.</p>
+          <p>Once the store owner dashboard was solid, I designed the regional dashboard using the same architectural principle &mdash; four stat cards at top, priority-ranked content in the main area, predictive content in the right panel &mdash; but with completely different content.</p>
+          <div class="strategy-box">
+            <strong>The result</strong>
+            <p>Two dashboards that feel like they belong to the same system &mdash; same navigation structure, same visual language &mdash; but each one answering the specific first questions of the person using it.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+      <!-- IA BEFORE/AFTER DIAGRAM: Transition from strategy to architecture -->
+      <div class="ia-diagram reveal" style="margin-top: 100px;">
+        <div class="ia-col before">
+          <div class="ia-col-header before">Before &mdash; Fixoria</div>
+          <div class="ia-element ia-primary before">
+            <span class="ia-primary-label">Product table</span>
+            <span class="ia-primary-sub">PRIMARY VIEW &mdash; dominated the screen</span>
+          </div>
+          <div class="ia-secondary-grid">
+            <div class="ia-secondary">
+              <span class="ia-secondary-label">Low stock</span>
+              <span class="ia-secondary-sub before">3+ clicks to find</span>
+            </div>
+            <div class="ia-secondary">
+              <span class="ia-secondary-label">Stock health</span>
+              <span class="ia-secondary-sub before">3+ clicks to find</span>
+            </div>
+            <div class="ia-secondary">
+              <span class="ia-secondary-label">Orders</span>
+              <span class="ia-secondary-sub before">3+ clicks to find</span>
+            </div>
+            <div class="ia-secondary">
+              <span class="ia-secondary-label">Deliveries</span>
+              <span class="ia-secondary-sub before">3+ clicks to find</span>
+            </div>
+          </div>
+          <div class="ia-footer before">No prediction · data organised for browsing</div>
+        </div>
+
+        <div class="ia-vs">vs</div>
+
+        <div class="ia-col after">
+          <div class="ia-col-header after">After &mdash; FreshBasket</div>
+          <div class="ia-secondary-grid">
+            <div class="ia-secondary">
+              <span class="ia-secondary-label">Low stock items</span>
+              <span class="ia-secondary-sub after">Visible on open</span>
+            </div>
+            <div class="ia-secondary">
+              <span class="ia-secondary-label">Stock health %</span>
+              <span class="ia-secondary-sub after">Visible on open</span>
+            </div>
+            <div class="ia-secondary">
+              <span class="ia-secondary-label">Orders in transit</span>
+              <span class="ia-secondary-sub after">Visible on open</span>
+            </div>
+            <div class="ia-secondary">
+              <span class="ia-secondary-label">Time to restock</span>
+              <span class="ia-secondary-sub after">Predictive · new</span>
+            </div>
+          </div>
+          <div class="ia-element ia-primary after" style="margin-top:12px;">
+            <span class="ia-primary-label">Product table</span>
+            <span class="ia-primary-sub">SECONDARY &mdash; 2nd level page</span>
+          </div>
+          <div class="ia-footer after">Prediction first · 0 clicks to critical data</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 · DESIGN SOLUTION -->
+<section class="section" style="background:#E1F5EE;">
+  <div class="container">
+    <div class="reveal" style="margin-bottom: 64px;">
+      <span class="section-label" style="color:var(--teal-dim);">09 &mdash; Design Solution</span>
+      <h2 style="color:var(--navy); font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 32px;">Critical data moved to the front.<br>Everything else moved to the back.</h2>
+      <p style="color:var(--text-secondary); font-size: 1.1rem; max-width: 68ch;">The old system was organised around data. The redesign was organised around decisions. The product table moved to a secondary view. In its place: a persistent summary layer that told both roles exactly what they needed the moment they opened the app.</p>
+    </div>
+
+    <div class="before-after reveal">
+      <div class="ba-item">
+        <span class="ba-label before">BEFORE — FIXORIA</span>
+        <img src="assets/old-dashboard.png" alt="Fixoria legacy dashboard">
+        <p class="ba-caption">The table was the entire screen. Every critical number required deliberate navigation to find.</p>
+      </div>
+      <div class="ba-item after">
+        <span class="ba-label after">AFTER — SHOP OWNER VIEW</span>
+        <img src="assets/dashboard-store.png" alt="FreshBasket store owner dashboard">
+        <p class="ba-caption">Four stat cards visible immediately. No navigation needed to know the state of the store.</p>
+      </div>
+    </div>
+
+    <div class="dashboard-regional reveal" style="margin-bottom: 56px;">
+      <div class="dashboard-regional-bar">
+        <span class="dashboard-regional-role">Warehouse Supervisor</span>
+        <span class="dashboard-regional-tag">Regional Overview &amp; Logistics Command</span>
+      </div>
+      <img src="assets/dashboard-regional.png" alt="FreshBasket regional dashboard">
+    </div>
+
+    <div class="annotations reveal">
+      <div class="annotation">
+        <h4>Four persistent stat cards — role-specific</h4>
+        <p>Both dashboards open with four stat cards — but the cards are completely different. The store owner sees Low Stock Items, Orders In Transit, Stock Health %, Today's Orders. The warehouse supervisor sees Total Orders, Completed, Cancelled, Orders/Hour. Same pattern, different first questions.</p>
+        <p style="margin-top:1em;">Orders/Hour. Same pattern, different first questions.</p>
+      </div>
+      <div class="annotation">
+        <h4>Time Left to Restock — predictive panel</h4>
+        <p>Calculates time-to-empty based on live sales velocity. Toned Milk: empty in 4h 20m. Warns before the problem — doesn't report after it. This was the design decision that mattered most to users.</p>
+      </div>
+      <div class="annotation">
+        <h4>Predictive Alerts for the warehouse</h4>
+        <p>Perishable urgency surfaced with exact timers — "1 Day Left" for Toned Milk, "2 Days Left" for Whole Wheat Bread, named by region. Ramesh can act before expiry, not after it.</p>
+      </div>
+      <div class="annotation removal">
+        <h4>The deliberate removal — table deprioritised</h4>
+        <p>The product table moved off the home screen — still accessible from the navigation, but no longer the default view. Knowing what to take away was as important as knowing what to add.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 · USABILITY TESTING -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">10 — Usability Testing</span>
+      <h2>Users were right —<br>for reasons I hadn't anticipated.</h2>
+      <p class="section-intro" style="color:var(--text-secondary);">When I brought the redesigned interface to testing with both shop owners and warehouse supervisors, error rates improved immediately. But I also observed something I had not designed for.</p>
+    </div>
+    <div class="testing-grid">
+      <div class="testing-card finding reveal">
+        <div class="testing-tag finding">Finding</div>
+        <h3>Muscle memory friction</h3>
+        <p>Experienced users — 3 to 5 years on the old system — reached for buttons that no longer existed in those positions. Five years of ingrained habit encountering a new spatial reality.</p>
+      </div>
+      <div class="testing-card resolution reveal">
+        <div class="testing-tag resolution">Resolution</div>
+        <h3>Transition cost, not a design flaw</h3>
+        <p>Day 1–3–7 follow-up confirmed hesitation dropped sharply by Day 3 — a transition cost, not a design flaw. The solution is demonstrated in the feature demo below.</p>
+      </div>
+    </div>
+    <div class="day-chart reveal">
+      <div class="day-chart-title">Proficiency by day — both roles</div>
+
+      <!-- Day 1 -->
+      <div class="day-row">
+        <div class="day-label-block">
+          <span class="day-number">Day 1</span>
+          <span class="day-sublabel">First session</span>
+        </div>
+        <div class="day-bar-wrap">
+          <div class="day-bar-track">
+            <div class="day-bar-fill d1" style="width:35%">
+              <span class="day-bar-pct">35%</span>
+            </div>
+          </div>
+        </div>
+        <div class="day-status-block">
+          <span class="day-status-text d1">High hesitation</span>
+          <span class="day-status-note">Reaching for old button positions</span>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="day-row">
+        <div class="day-label-block">
+          <span class="day-number">Day 3</span>
+          <span class="day-sublabel">Mid transition</span>
+        </div>
+        <div class="day-bar-wrap">
+          <div class="day-bar-track">
+            <div class="day-bar-fill d2" style="width:78%">
+              <span class="day-bar-pct">78%</span>
+            </div>
+          </div>
+        </div>
+        <div class="day-status-block">
+          <span class="day-status-text d2">Mostly fluent</span>
+          <span class="day-status-note">New habits forming, errors falling</span>
+        </div>
+      </div>
+
+      <!-- Day 7 -->
+      <div class="day-row">
+        <div class="day-label-block">
+          <span class="day-number">Day 7</span>
+          <span class="day-sublabel">One week in</span>
+        </div>
+        <div class="day-bar-wrap">
+          <div class="day-bar-track">
+            <div class="day-bar-fill d3" style="width:98%">
+              <span class="day-bar-pct">98%</span>
+            </div>
+          </div>
+        </div>
+        <div class="day-status-block">
+          <span class="day-status-text d3">Fully proficient</span>
+          <span class="day-status-note">Both roles, zero errors in final session</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 09 · FEATURE DEMOS -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">11 — Feature Demos</span>
+      <h2>Designed in the field.<br>Shipped in the product.</h2>
+    </div>
+    <div class="demo-section-intro reveal">
+      <p>Most case studies stop at high-fidelity mockups. These are not mockups — this is the shipped product. Each feature is traceable to a specific moment in a shop or warehouse where a real person hit a real wall.</p>
+    </div>
+    <div class="reveal">
+      <div class="demo-header">
+        <span class="demo-number">DEMO 01 + 02</span>
+        <span class="demo-title">Draggable layout &amp; Light/Dark mode toggle</span>
+      </div>
+      <video class="demo-video" controls preload="metadata" loop muted playsinline>
+        <source src="assets/fresh-basket-practical.webm" type="video/webm">
+        Your browser does not support video playback.
+      </video>
+      <div class="demo-context">
+        <div>
+          <div class="demo-context-label">Draggable button layout — the implementation</div>
+          <p>Users drag and lock any action to their preferred screen position. Built directly from the muscle memory finding — experienced staff preserved familiarity, new staff adopted the default. The system adapted to the user.</p>
+        </div>
+        <div>
+          <div class="demo-context-label">One-tap Light/Dark toggle — built from day one</div>
+          <p>Fluorescent lighting at checkout counters made the light-mode interface almost unreadable — a problem invisible from a desk, obvious on site. The toggle was built into the top bar from day one: one tap, any screen, no Settings navigation required.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · OUTCOMES -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">12 — Outcomes</span>
+      <h2>Errors dropped.<br>Training disappeared.<br>Trust came back.</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="metrics-row reveal">
+      <div class="metric-tile">
+        <div class="metric-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <span class="metric-value">0</span>
+        <div class="metric-label">Training sessions needed for new staff to reach full proficiency</div>
+      </div>
+      <div class="metric-tile">
+        <div class="metric-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <span class="metric-value">~80%</span>
+        <div class="metric-label">Reduction in task error rate immediately post-launch</div>
+      </div>
+      <div class="metric-tile">
+        <div class="metric-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+        <span class="metric-value">Day 3</span>
+        <div class="metric-label">To full proficiency for experienced users — down from 7+ days on the old system</div>
+      </div>
+      <div class="metric-tile">
+        <div class="metric-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <span class="metric-value">100%</span>
+        <div class="metric-label">App adoption — paper logs retired at till and dispatch</div>
+      </div>
+    </div>
+    <div class="outcome-stories reveal">
+      <div class="outcome-story">
+        <h4>New staff — zero training needed</h4>
+        <p>New starters at both the shop floor and warehouse reached full proficiency through exploration alone — no formal training, because the information they needed was visible without navigation.</p>
+      </div>
+      <div class="outcome-story">
+        <h4>Experienced staff — faster, less taxing</h4>
+        <p>Both roles reported the system was significantly less mentally demanding at peak hours — the cognitive load of holding numbers across screens and assembling a mental picture was gone.</p>
+      </div>
+      <div class="outcome-story">
+        <h4>The paper logs were put away</h4>
+        <p>At the till and at the dispatch area — the system abandoned in favour of a notepad became the default operational tool again, not because it was mandated, but because it was finally faster.</p>
+      </div>
+    </div>
+  </div>
+  <div class="closing-line">
+    <p>"The paper logs were put away. Not because they were told to. Because the tool was finally faster."</p>
+  </div>
+</section>
+
+<!-- 11 · REFLECTIONS -->
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">13 — Reflections</span>
+      <h2>What this project<br>reinforced.</h2>
+    </div>
+    <div class="reflections-grid">
+      <div class="reflection-card reveal">
+        <div class="reflection-number">01</div>
+        <span class="reflection-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 20H5a2 2 0 01-2-2V7a2 2 0 012-2h3l2-2h4l2 2h3a2 2 0 012 2v11a2 2 0 01-2 2z"/><circle cx="12" cy="13" r="3"/></svg></span>
+        <h3>Fieldwork over assumption</h3>
+        <p>The paper logs, the lighting glare, and the muscle memory friction were all invisible from a desk — none appeared in the original brief. All three shaped major design decisions. The insights that mattered most came from being physically present.</p>
+        <p class="reflection-forward">On the next project: if the environment is too constrained to allow field research, that constraint needs to be surfaced as a risk from day one — not resolved by skipping it.</p>
+      </div>
+      <div class="reflection-card reveal">
+        <div class="reflection-number">02</div>
+        <span class="reflection-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><path d="M1 21v-1a7 7 0 0114 0v1"/><path d="M15 14a7 7 0 018 7v0"/></svg></span>
+        <h3>Design for more than one user</h3>
+        <p>Two roles, overlapping but not identical needs. Where they converged — the stat card layer served both. Where they diverged — two distinct dashboards. One undifferentiated interface would have failed both simultaneously.</p>
+        <p class="reflection-forward">On the next project: identify all operator roles before wireframing begins. The number of distinct roles shapes the information architecture more than any other single input.</p>
+      </div>
+      <div class="reflection-card reveal">
+        <div class="reflection-number">03</div>
+        <span class="reflection-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+        <h3>Every addition requires a removal</h3>
+        <p>Surfacing the stat cards required deprioritising the detailed table — a decision that changed the entire primary experience and had to be defended to stakeholders. Articulating what you removed, and why, is as important as articulating what you added.</p>
+        <p class="reflection-forward">On the next project: name the removal in the brief. If you can't say what you're taking away, the design is not finished.</p>
+      </div>
+      <div class="reflection-card reveal">
+        <div class="reflection-number">04</div>
+        <span class="reflection-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+        <h3>Prediction beats reporting</h3>
+        <p>The Time Left to Restock panel was the feature both roles mentioned most — above the layout, above speed, above the toggle. The shift from reporting what happened to predicting what's about to happen is the difference between a dashboard and an operational tool.</p>
+        <p class="reflection-forward">On the next project: ask whether any data in the system could be a prediction rather than a status. The answer is almost always yes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>FreshBasket Inventory Redesign &nbsp;·&nbsp; UX Case Study &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; End-to-end product redesign</p>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
