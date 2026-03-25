@@ -123,49 +123,65 @@
       <p class="reveal" style="color:var(--text-on-teal-pale); font-size: 1.1rem;">When I sat down and tried to use the Fixoria dashboard the way Suresh and Ramesh would use it — standing at a counter, customers waiting — I realised something immediately. This system was not built for them. It was built for someone reviewing the business at the end of the day.</p>
     </div>
 
-    <!-- Before/After Images -->
-    <div class="before-after reveal" style="margin-top: 56px;">
-      <div class="ba-item">
-        <span class="ba-label before">BEFORE — FIXORIA</span>
-        <img src="assets/old-dashboard.png" alt="Old Fixoria dashboard">
-      </div>
-      <div class="ba-item after">
-        <span class="ba-label after" style="background:var(--teal);">AFTER — FRESHBASKET</span>
-        <img src="assets/dashboard-store.png" alt="FreshBasket redesign">
+    <!-- Annotated Old Dashboard -->
+    <div class="annotated-image-wrap reveal">
+      <span class="ba-label before" style="margin-bottom: 24px;">BEFORE — FIXORIA (ANNOTATED)</span>
+      <div style="position: relative; display: inline-block; width: 100%;">
+        <img src="assets/old-dashboard.png" alt="Old Fixoria dashboard annotated">
+        
+        <!-- Annotation Markers -->
+        <div class="hotspot" style="top: 25%; left: 8%;">1</div>
+        <div class="hotspot" style="top: 10%; left: 45%;">2</div>
+        <div class="hotspot" style="top: 60%; left: 35%;">3</div>
+        <div class="hotspot" style="top: 35%; left: 8%;">4</div>
+        <div class="hotspot" style="top: 45%; left: 65%;">5</div>
+        <div class="hotspot" style="top: 85%; left: 50%;">6</div>
       </div>
     </div>
 
-    <!-- 2x2 Annotations Grid -->
-    <div class="annotations reveal" style="margin-top: 64px;">
-      <div class="annotation removal">
-        <h4>The navigation told the wrong story</h4>
-        <p>The left sidebar listed Finance, Marketing, Analytics Report, Customers, Discount, Online Store — twelve items in total. This was a menu designed for the CEO, Himmad, whose name sits at the bottom. Suresh is not the CEO. He is a shop owner at the counter during a busy shift.</p>
-        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: the store owner navigation has only 5 task-focused items. Only what each role actually uses.</p>
+    <!-- Shortened Annotation Cards -->
+    <div class="annotation-grid-compact reveal">
+      <div class="annotation-caption-flex">
+        <div class="hotspot-inline">1</div>
+        <div>
+          <h4>Wrong navigation</h4>
+          <p>12+ items built for a CEO (Finance, Marketing, Analytics). Irrelevant for an operator on shift.</p>
+        </div>
       </div>
-      <div class="annotation removal">
-        <h4>186 out-of-stock items had no urgency</h4>
-        <p>The stock bar at the top showed "Out of stock: 186" and "Low stock: 355" — the right information, but rendered as a small coloured bar above a 45-row product table. Your eye went to the table. The critical numbers sat quietly above it, easy to miss entirely.</p>
-        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: Low Stock Items (2) and Stock Health (92%) are large stat cards — the first things you see.</p>
+      <div class="annotation-caption-flex">
+        <div class="hotspot-inline">2</div>
+        <div>
+          <h4>No urgency</h4>
+          <p>"Out of stock" is a tiny label buried above a massive table. Extremely easy to miss.</p>
+        </div>
       </div>
-      <div class="annotation removal">
-        <h4>All products looked equally important</h4>
-        <p>In the product table, items appeared as identical rows. There was no visual weight, no sorting by urgency, nothing that said "this one needs your attention right now." You had to read every row to understand the situation.</p>
-        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: the Time Left to Restock panel surfaces only the critical items — with the action right there.</p>
+      <div class="annotation-caption-flex">
+        <div class="hotspot-inline">3</div>
+        <div>
+          <h4>No visual hierarchy</h4>
+          <p>Every item looks equally important. The user must manually read every row to find critical issues.</p>
+        </div>
       </div>
-      <div class="annotation removal">
-        <h4>Stock and orders were completely disconnected</h4>
-        <p>If Suresh wanted to know "is what I'm running out of actually on its way?" — he had to open Inventory, note the problem, then navigate to Orders, find the relevant order, and check its status. No connection between them.</p>
-        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: Orders In Transit and the Recent Orders table both live on the home screen. Full context in one view.</p>
+      <div class="annotation-caption-flex">
+        <div class="hotspot-inline">4</div>
+        <div>
+          <h4>Disconnected context</h4>
+          <p>Finding if a low-stock item is already ordered requires navigating to a completely separate Orders screen.</p>
+        </div>
       </div>
-      <div class="annotation removal">
-        <h4>The system showed the present. It never warned about the future.</h4>
-        <p>For Ramesh, perishable items like milk have expiry windows measured in hours. The old dashboard showed current stock counts — a product with 2 days left looked identical to a product with 200 days left. Both were just rows in a table.</p>
-        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: the Predictive Alerts panel shows exact remaining shelf life — actionable and region-specific.</p>
+      <div class="annotation-caption-flex">
+        <div class="hotspot-inline">5</div>
+        <div>
+          <h4>No prediction</h4>
+          <p>Shows current stock count only, with absolute zero warning for rapidly expiring perishable items.</p>
+        </div>
       </div>
-      <div class="annotation removal">
-        <h4>The table was the entire product. There was nothing else.</h4>
-        <p>Open the Fixoria inventory section and you get one thing: a paginated table of 45 products. This is not a dashboard. It is a data viewer. It shows everything equally, which means it effectively shows you nothing useful at speed.</p>
-        <p style="margin-top:1em; font-weight: 500; font-size: 0.85rem; color: var(--teal-dim); text-transform: uppercase; letter-spacing: 0.05em;">In the redesign: the Home screen is for decisions, not browsing. The table is one click away when needed.</p>
+      <div class="annotation-caption-flex">
+        <div class="hotspot-inline">6</div>
+        <div>
+          <h4>Data, not decisions</h4>
+          <p>The entire interface is just a paginated table. It functions as a data viewer, not an operational dashboard.</p>
+        </div>
       </div>
     </div>
 
@@ -444,6 +460,26 @@
           <h3>I stopped thinking about screens and started thinking about questions.</h3>
           <p>The mistake the old dashboard made was organising information around what the system knew, rather than what the user needed to know. So I flipped the question. Instead of "how should I arrange this data?" I asked: what is the very first question Suresh has when he opens the app?</p>
           <p>For Suresh at the store: <em>Do I have anything running critically low right now?</em> That is it. Everything else comes after. For Ramesh at the warehouse: <em>How is today going &mdash; are orders moving, is anything going wrong?</em> He needs a read on regional operations first, then goes deeper.</p>
+          
+          <div class="step-visual cards-2col" style="margin-top: 32px; margin-bottom: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <div style="background: white; border-radius: 6px; padding: 24px; border-top: 3px solid var(--teal); box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+              <div style="font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-dim); margin-bottom: 16px;">Suresh (Shop Owner) First 10s</div>
+              <ol style="margin: 0; padding-left: 20px; font-size: 0.95rem; color: var(--navy); line-height: 1.6;">
+                <li style="margin-bottom: 8px;">Do I have anything running critically low right now?</li>
+                <li style="margin-bottom: 8px;">Are my requested orders actually in transit?</li>
+                <li>Is the overall stock health okay today?</li>
+              </ol>
+            </div>
+            <div style="background: white; border-radius: 6px; padding: 24px; border-top: 3px solid var(--amber); box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+              <div style="font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber-dark); margin-bottom: 16px;">Ramesh (Warehouse) First 10s</div>
+              <ol style="margin: 0; padding-left: 20px; font-size: 0.95rem; color: var(--navy); line-height: 1.6;">
+                <li style="margin-bottom: 8px;">How is regional operations performing today?</li>
+                <li style="margin-bottom: 8px;">Are any perishable items close to expiry?</li>
+                <li>Are there any urgent blocked orders?</li>
+              </ol>
+            </div>
+          </div>
+
           <div class="strategy-box">
             <strong>The output</strong>
             <p>Two lists &mdash; one per user &mdash; of the three questions each person has in their first ten seconds in the app. Those lists became the brief for the home screen. If the app could answer those questions without a single click, it would already be dramatically better than what existed.</p>
@@ -469,7 +505,7 @@
         <div class="strategy-content">
           <h3>I listed what could be removed &mdash; not just what to add.</h3>
           <p>The old dashboard had Finance, Marketing, Analytics, Report, Discount, and Customers all in the primary navigation. For Suresh's job, none of these are needed at the counter. For Ramesh's job, none of them are relevant during a warehouse shift.</p>
-          <p>I made a deliberate decision: the redesigned home screen would contain only what each user needed to act right now. Everything else would remain accessible &mdash; one click away &mdash; but it would not compete for attention on the primary screen. The store owner went from 12+ navigation items to 4; the warehouse supervisor to 4.</p>
+          <p>I made a deliberate decision: the redesigned home screen would contain only what each user needed to act right now. Everything else would remain accessible &mdash; one click away &mdash; but it would not compete for attention on the primary screen. The store owner went from 12+ navigation items to 5. The warehouse supervisor to 4.</p>
           <div class="strategy-box">
             <strong>The principle</strong>
             <p>Knowing what to take away was as important as knowing what to add. The biggest single improvement in the redesign came not from adding the predictive panel &mdash; but from moving the 45-product table out of the primary view entirely.</p>
@@ -483,6 +519,20 @@
           <h3>I realized the problem was not just missing data &mdash; it was missing prediction.</h3>
           <p>When I was working out how to show stock levels for the shop owner, my first instinct was to show current stock counts &mdash; you have 12 units of Toned Milk. That is what the old system was already doing, just buried in a table.</p>
           <p>Then I thought: what does Suresh actually need to know? He does not need to know he has 12 units. He needs to know whether 12 units is enough to last through the day. The app knows the sales velocity. It knows the current stock level. It can do that calculation.</p>
+          
+          <div class="step-visual" style="margin-top: 32px; margin-bottom: 32px; display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch;">
+            <div style="background: white; border-radius: 6px; padding: 24px; border: 1px solid var(--border-light); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+              <div style="font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--coral); margin-bottom: 16px;">Status (Passive)</div>
+              <div style="font-size: 1.2rem; font-weight: 500; color: var(--navy);">12 units remaining</div>
+            </div>
+            <div style="display: flex; align-items: center; color: var(--muted); font-size: 1.5rem;">&rarr;</div>
+            <div style="background: rgba(15,155,142,0.05); border-radius: 6px; padding: 24px; border: 1px solid rgba(15,155,142,0.2); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+              <div style="font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px;">Prediction (Active)</div>
+              <div style="font-size: 1.25rem; font-weight: 700; color: var(--teal-dim);">Empty in 4h 20m</div>
+              <div style="font-size: 0.85rem; color: var(--muted); margin-top: 4px; font-family: var(--mono);">AVG SALES: 1.2/HR</div>
+            </div>
+          </div>
+
           <div class="strategy-box">
             <strong>The shift</strong>
             <p>Instead of "12 units remaining" &mdash; show "Empty in 4h 20m &middot; Avg Sales: 1.2/hr". That is a completely different piece of information. The first tells you where you are. The second tells you how long you have. This became the design principle for the entire project: wherever possible, turn a status into a prediction.</p>
@@ -496,6 +546,29 @@
           <h3>I wireframed in Figma, starting with the four stat cards &mdash; one role at a time.</h3>
           <p>I did not start by wireframing the full dashboard. I wireframed the four summary cards first &mdash; and I started with the store owner because that was the simpler job to solve: Low Stock Items, Orders in Transit, Stock Health %, Today's Orders. Four numbers, large, visible, no interaction required.</p>
           <p>I tested the layout with one simple question: if Suresh opens this app and has 10 seconds before a customer needs attention, can he see everything important? If yes, the layout works. If anything important requires a click, it needs to move up.</p>
+          
+          <div class="step-visual" style="margin-top: 32px; margin-bottom: 32px;">
+            <div style="font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px;">Wireframe Sketch &mdash; Four Stat Cards</div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; width: 100%;">
+              <div style="border: 2px dashed #cbd5e1; border-radius: 6px; padding: 20px; background: #f8fafc; height: 120px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="width: 60%; height: 12px; background: #e2e8f0; border-radius: 2px;"></div>
+                <div style="width: 40%; height: 24px; background: #cbd5e1; border-radius: 4px;"></div>
+              </div>
+              <div style="border: 2px dashed #cbd5e1; border-radius: 6px; padding: 20px; background: #f8fafc; height: 120px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="width: 70%; height: 12px; background: #e2e8f0; border-radius: 2px;"></div>
+                <div style="width: 50%; height: 24px; background: #cbd5e1; border-radius: 4px;"></div>
+              </div>
+              <div style="border: 2px dashed #cbd5e1; border-radius: 6px; padding: 20px; background: #f8fafc; height: 120px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="width: 50%; height: 12px; background: #e2e8f0; border-radius: 2px;"></div>
+                <div style="width: 30%; height: 24px; background: #cbd5e1; border-radius: 4px;"></div>
+              </div>
+              <div style="border: 2px dashed #cbd5e1; border-radius: 6px; padding: 20px; background: #f8fafc; height: 120px; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="width: 65%; height: 12px; background: #e2e8f0; border-radius: 2px;"></div>
+                <div style="width: 45%; height: 24px; background: #cbd5e1; border-radius: 4px;"></div>
+              </div>
+            </div>
+          </div>
+
           <div class="strategy-box">
             <strong>Important</strong>
             <p>Both dashboards use four stat cards at the top &mdash; same pattern, same position &mdash; but the content of those cards is completely different, because the first questions are completely different. The store owner's cards answer "What is the state of my store?" The warehouse supervisor's cards answer "How is regional operations performing?" The shared architecture, role-specific content.</p>
@@ -613,7 +686,6 @@
       <div class="annotation">
         <h4>Four persistent stat cards — role-specific</h4>
         <p>Both dashboards open with four stat cards — but the cards are completely different. The store owner sees Low Stock Items, Orders In Transit, Stock Health %, Today's Orders. The warehouse supervisor sees Total Orders, Completed, Cancelled, Orders/Hour. Same pattern, different first questions.</p>
-        <p style="margin-top:1em;">Orders/Hour. Same pattern, different first questions.</p>
       </div>
       <div class="annotation">
         <h4>Time Left to Restock — predictive panel</h4>
